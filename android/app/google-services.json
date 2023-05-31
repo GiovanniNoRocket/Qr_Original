@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "599366101933",
+    "project_id": "qr-original-7b9bb",
+    "storage_bucket": "qr-original-7b9bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599366101933:android:e04614e41b2ee3b9a60f24",
+        "android_client_info": {
+          "package_name": "com.DevSheep.qr_original"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599366101933-34n56qk6bffpvdf1c2s5keafdcsksfig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC68wO_suvWKCiIoF-a-hiIkk96o0faeXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599366101933-34n56qk6bffpvdf1c2s5keafdcsksfig.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "599366101933-0rfilo7m45glmi61s1eljmguvfgp4c51.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.qrOriginal.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
