@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_original/views/company_register.dart';
 
 class LoginView extends StatelessWidget {
   final TextEditingController emailController;
@@ -29,9 +30,9 @@ class LoginView extends StatelessWidget {
           children: [
             SizedBox(height: MediaQuery.of(context).size.height * 0.12),
             Icon(
-              Icons.corporate_fare,
+              Icons.corporate_fare_rounded,
               color: Color.fromARGB(255, 37, 43, 214),
-              size: 200,
+              size: 150,
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.035),
             SizedBox(
@@ -62,6 +63,29 @@ class LoginView extends StatelessWidget {
             ElevatedButton(
               onPressed: loginPressed,
               child: Text('Iniciar sesión'),
+            ),
+            SizedBox(height: 20.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment
+                  .center, // Alineación de los botones y espacio entre ellos
+              children: <Widget>[
+                const Text("Don't have an account? "),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const signUp()));
+                  },
+                  child: const Text(
+                    "Sign up",
+                    style: TextStyle(
+                        color: Colors.blueAccent,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15),
+                  ),
+                )
+              ],
             ),
           ],
         ),
