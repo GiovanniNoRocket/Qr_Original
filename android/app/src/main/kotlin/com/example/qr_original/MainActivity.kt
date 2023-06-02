@@ -1,4 +1,4 @@
-package com.example.qr_original
+package com.DevSheep.qr_original
 
 import io.flutter.embedding.android.FlutterActivity
 
