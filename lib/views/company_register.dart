@@ -1,245 +1,176 @@
 import 'package:flutter/material.dart';
 
-class signUp extends StatefulWidget {
-  const signUp({super.key});
+class RegisterView extends StatelessWidget {
+  final TextEditingController nombreController;
+  final TextEditingController nitController;
+  final TextEditingController dominioController;
+  final TextEditingController direccionController;
+  final TextEditingController telefonoController;
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+  final TextEditingController passwordConfController;
+  final bool isEmailValid;
+  final bool isPasswordValid;
+  final bool isPasswordConfValid;
+  final VoidCallback registerPressed;
 
-  @override
-  State<signUp> createState() => _signUpState();
-}
-
-class _signUpState extends State<signUp> {
-  final _formKey = GlobalKey<FormState>();
-  final TextEditingController nombreController = new TextEditingController();
-  final TextEditingController nitController = new TextEditingController();
-  final TextEditingController dominioController = new TextEditingController();
-  final TextEditingController direccionController = new TextEditingController();
-  final TextEditingController telefonoController = new TextEditingController();
-  final TextEditingController emailController = new TextEditingController();
-  final TextEditingController passwordController = new TextEditingController();
-  final TextEditingController passwordConfController =
-      new TextEditingController();
+  const RegisterView(
+      {required this.registerPressed,
+      required this.isEmailValid,
+      required this.isPasswordValid,
+      required this.isPasswordConfValid,
+      required this.nombreController,
+      required this.nitController,
+      required this.dominioController,
+      required this.direccionController,
+      required this.telefonoController,
+      required this.emailController,
+      required this.passwordController,
+      required this.passwordConfController});
 
   @override
   Widget build(BuildContext context) {
-    final nombreField = TextFormField(
-        autofocus: false,
-        controller: nombreController,
-        keyboardType: TextInputType.text,
-        //validator: {} {}
-        onSaved: (value) {
-          nombreController.text = value!;
-        },
-        textInputAction: TextInputAction.next,
-        decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.apartment),
-          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Company",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ));
-
-    final nitField = TextFormField(
-        autofocus: false,
-        controller: nitController,
-        keyboardType: TextInputType.number,
-        //validator: {} {}
-        onSaved: (value) {
-          nitController.text = value!;
-        },
-        textInputAction: TextInputAction.next,
-        decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.numbers_rounded),
-          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "NIT",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ));
-
-    final dominioField = TextFormField(
-        autofocus: false,
-        controller: dominioController,
-        keyboardType: TextInputType.text,
-        //validator: {} {}
-        onSaved: (value) {
-          dominioController.text = value!;
-        },
-        textInputAction: TextInputAction.next,
-        decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.domain),
-          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Domain",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ));
-
-    final direccionField = TextFormField(
-        autofocus: false,
-        controller: direccionController,
-        keyboardType: TextInputType.streetAddress,
-        //validator: {} {}
-        onSaved: (value) {
-          direccionController.text = value!;
-        },
-        textInputAction: TextInputAction.next,
-        decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.home_work),
-          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Address",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ));
-
-    final telefonoField = TextFormField(
-        autofocus: false,
-        controller: telefonoController,
-        keyboardType: TextInputType.phone,
-        //validator: {} {}
-        onSaved: (value) {
-          telefonoController.text = value!;
-        },
-        textInputAction: TextInputAction.next,
-        decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.phone),
-          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Phone",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ));
-
-    final emailField = TextFormField(
-        autofocus: false,
-        controller: emailController,
-        keyboardType: TextInputType.emailAddress,
-        //validator: {} {}
-        onSaved: (value) {
-          emailController.text = value!;
-        },
-        textInputAction: TextInputAction.next,
-        decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.email),
-          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Email",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ));
-
-    final passwordField = TextFormField(
-        autofocus: false,
-        controller: passwordController,
-        obscureText: true,
-
-        //validator: {} {}
-        onSaved: (value) {
-          passwordController.text = value!;
-        },
-        textInputAction: TextInputAction.done,
-        decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.vpn_key),
-          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Password",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ));
-
-    final passwordConfField = TextFormField(
-        autofocus: false,
-        controller: passwordConfController,
-        obscureText: true,
-
-        //validator: {} {}
-        onSaved: (value) {
-          passwordController.text = value!;
-        },
-        textInputAction: TextInputAction.done,
-        decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.vpn_key),
-          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: " Confirm password",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ));
-
-    final signUpButton = Material(
-        elevation: 5,
-        borderRadius: BorderRadius.circular(7),
-        color: Colors.blueAccent,
-        child: MaterialButton(
-          padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          minWidth: MediaQuery.of(context).size.width * 0.4,
-          onPressed: () {},
-          child: const Text(
-            "Register",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
-          ),
-        ));
-
+    double widthDevice = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("QR Original"),
+        title: const Text('Inicio de sesión empresas'),
       ),
       backgroundColor: Colors.grey[300],
-      body: Center(
-        child: SingleChildScrollView(
-          child: Container(
-            color: Colors.grey[300],
-            child: Padding(
-              padding: const EdgeInsets.all(36.0),
-              child: Form(
-                  key: _formKey,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      const SizedBox(height: 35),
-                      Icon(
-                        Icons.corporate_fare_rounded,
-                        color: Color.fromARGB(255, 37, 43, 214),
-                        size: 150,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: const <Widget>[
-                          Text(
-                            'Sign up',
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 25),
-                      nombreField,
-                      const SizedBox(height: 15),
-                      nitField,
-                      const SizedBox(height: 15),
-                      dominioField,
-                      const SizedBox(height: 15),
-                      direccionField,
-                      const SizedBox(height: 15),
-                      telefonoField,
-                      const SizedBox(height: 15),
-                      emailField,
-                      const SizedBox(height: 15),
-                      passwordField,
-                      const SizedBox(height: 15),
-                      passwordConfField,
-                      const SizedBox(height: 30),
-                      signUpButton
-                    ],
-                  )),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(36.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: MediaQuery.of(context).size.height * 0.005),
+            const Icon(
+              Icons.corporate_fare,
+              color: Color.fromARGB(255, 37, 43, 214),
+              size: 150,
             ),
-          ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.035),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Sign up',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.035),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.91,
+              child: TextField(
+                controller: nombreController,
+                decoration: const InputDecoration(
+                  prefixIcon: Icon(Icons.apartment),
+                  contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                  labelText: 'Empresa',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+            SizedBox(height: 15, width: widthDevice),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.91,
+              child: TextField(
+                controller: nitController,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.numbers_rounded),
+                    contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                    labelText: 'NIT',
+                    border: OutlineInputBorder()),
+              ),
+            ),
+            SizedBox(height: 15, width: widthDevice),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.91,
+              child: TextField(
+                controller: dominioController,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.domain),
+                    contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                    labelText: 'Dominio',
+                    border: OutlineInputBorder()),
+              ),
+            ),
+            SizedBox(height: 15, width: widthDevice),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.91,
+              child: TextField(
+                controller: direccionController,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.home_work),
+                    contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                    labelText: 'Direccion',
+                    border: OutlineInputBorder()),
+              ),
+            ),
+            SizedBox(height: 15, width: widthDevice),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.91,
+              child: TextField(
+                controller: telefonoController,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.phone),
+                    contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                    labelText: 'Telefono',
+                    border: OutlineInputBorder()),
+              ),
+            ),
+            SizedBox(height: 15, width: widthDevice),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.91,
+              child: TextField(
+                controller: emailController,
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.email),
+                  contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+                  labelText: 'Correo electrónico',
+                  border: const OutlineInputBorder(),
+                  errorText:
+                      isEmailValid ? null : 'Correo electrónico inválido',
+                ),
+              ),
+            ),
+            SizedBox(height: 15, width: widthDevice),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.91,
+              child: TextField(
+                controller: passwordController,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.vpn_key),
+                    contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                    labelText: 'Contraseña',
+                    //errorText: isPasswordValid ? null : 'Contraseña inválida',
+                    border: OutlineInputBorder()),
+                obscureText: true,
+              ),
+            ),
+            SizedBox(height: 15, width: widthDevice),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.91,
+              child: TextField(
+                controller: passwordConfController,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.vpn_key),
+                    contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                    labelText: 'Confirmar contraseña',
+                    //errorText:
+                        //isPasswordConfValid ? null : 'Contraseña inválida',
+                    border: OutlineInputBorder()),
+                obscureText: true,
+              ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.040),
+            ElevatedButton(
+              onPressed: registerPressed,
+              child: const Text('Registrarse'),
+            ),
+          ],
         ),
       ),
     );

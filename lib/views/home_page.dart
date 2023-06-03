@@ -13,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Qr Original')),
+      appBar: AppBar(title: const Text('Qr Original')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -26,11 +26,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       builder: (context) => QRScanScreenController()),
                 );
               },
-              icon: Icon(Icons.qr_code_scanner,
+              icon: const Icon(Icons.qr_code_scanner,
                   color: Color.fromARGB(255, 37, 43, 214)),
               iconSize: 200,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -38,17 +38,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     MaterialPageRoute(builder: (context) => LoginController()),
                   );
                 },
-                child: Text('Iniciar Sesión'),
+                child: const Text('Iniciar Sesión'),
                 style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 37, 43, 214),
-                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                  primary: const Color.fromARGB(255, 37, 43, 214),
+                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
                   textStyle:
-                      TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                      const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 )),
-            SizedBox(height: 60),
+            const SizedBox(height: 60),
             Text(
               'Resultado del escaneo: ${qrResult ?? 'No se ha escaneado nada'}',
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
           ],
         ),

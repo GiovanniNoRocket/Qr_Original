@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qr_original/views/company_login_view.dart';
 
+
 class LoginController extends StatefulWidget {
   @override
   _LoginControllerState createState() => _LoginControllerState();

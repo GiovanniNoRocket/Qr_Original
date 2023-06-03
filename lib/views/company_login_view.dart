@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qr_original/views/company_register.dart';
+import 'package:qr_original/controllers/company_register_controller.dart';
 
 class LoginView extends StatelessWidget {
   final TextEditingController emailController;
@@ -8,7 +8,7 @@ class LoginView extends StatelessWidget {
   final bool isPasswordValid;
   final VoidCallback loginPressed;
 
-  LoginView({
+  const LoginView({
     required this.emailController,
     required this.passwordController,
     required this.isEmailValid,
@@ -21,64 +21,82 @@ class LoginView extends StatelessWidget {
     double widthDevice = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Inicio de sesión empresas'),
+        title: const Text('Inicio de sesión empresas'),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
+      backgroundColor: Colors.grey[300],
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(36.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height * 0.12),
-            Icon(
-              Icons.corporate_fare_rounded,
+            SizedBox(height: MediaQuery.of(context).size.height * 0.017),
+            const Icon(
+              Icons.corporate_fare,
               color: Color.fromARGB(255, 37, 43, 214),
               size: 150,
             ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.065),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Sign in',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.035),
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.6,
+              width: MediaQuery.of(context).size.width * 0.91,
               child: TextField(
                 controller: emailController,
                 decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.email),
+                  contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
                   labelText: 'Correo electrónico',
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                   errorText:
                       isEmailValid ? null : 'Correo electrónico inválido',
                 ),
               ),
             ),
-            SizedBox(height: 16, width: widthDevice),
+            SizedBox(height: 30, width: widthDevice),
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.6,
+              width: MediaQuery.of(context).size.width * 0.91,
               child: TextField(
                 controller: passwordController,
                 decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.vpn_key),
+                    contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
                     labelText: 'Contraseña',
                     errorText: isPasswordValid ? null : 'Contraseña inválida',
-                    border: OutlineInputBorder()),
+                    border: const OutlineInputBorder()),
                 obscureText: true,
               ),
             ),
-            SizedBox(height: 16.0),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.050),
             ElevatedButton(
               onPressed: loginPressed,
-              child: Text('Iniciar sesión'),
+              child: const Text('Iniciar sesión'),
             ),
-            SizedBox(height: 20.0),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.005),
             Row(
               mainAxisAlignment: MainAxisAlignment
                   .center, // Alineación de los botones y espacio entre ellos
               children: <Widget>[
-                const Text("Don't have an account? "),
+                const Text("¿No tienes cuenta? "),
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const signUp()));
+                            builder: (context) => RegisterController()));
                   },
                   child: const Text(
-                    "Sign up",
+                    "Crear",
                     style: TextStyle(
                         color: Colors.blueAccent,
                         fontWeight: FontWeight.bold,

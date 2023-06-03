@@ -16,7 +16,7 @@ class QRScanScreenView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Qr Original'),
+        title: const Text('Qr Original'),
       ),
       body: Stack(
         children: [
