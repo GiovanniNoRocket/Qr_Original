@@ -43,6 +43,8 @@ dependencies:
   #Qr code scanner dependencie
   qr_code_scanner: ^1.0.1
   firebase_core: ^2.13.1
+  cloud_firestore: ^4.8.0
+  firebase_auth: ^4.6.2
 
 
 dev_dependencies:

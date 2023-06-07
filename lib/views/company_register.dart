@@ -144,7 +144,7 @@ class RegisterView extends StatelessWidget {
                 decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.vpn_key),
                     contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                    labelText: 'Contraseña',
+                    //labelText: 'Contraseña',
                     //errorText: isPasswordValid ? null : 'Contraseña inválida',
                     border: OutlineInputBorder()),
                 obscureText: true,
