@@ -1,4 +1,4 @@
-// product.dart
+import 'package:qr_original/views/qr_generator_view.dart';
 
 class Product {
   final String id;
@@ -44,4 +44,10 @@ class Product {
         'isReported': isReported,
         'companyName': companyName,
       };
+
+  void generateQrCode() {
+    QRCodePopup(
+      data: id,
+    );
+  }
 }

@@ -33,7 +33,7 @@ class RegisterView extends StatelessWidget {
     double widthDevice = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Inicio de sesión empresas'),
+        title: const Text('Registro empresas'),
       ),
       backgroundColor: Colors.grey[300],
       body: SingleChildScrollView(
@@ -144,7 +144,7 @@ class RegisterView extends StatelessWidget {
                 decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.vpn_key),
                     contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                    //labelText: 'Contraseña',
+                    labelText: 'Contraseña',
                     //errorText: isPasswordValid ? null : 'Contraseña inválida',
                     border: OutlineInputBorder()),
                 obscureText: true,
@@ -160,7 +160,7 @@ class RegisterView extends StatelessWidget {
                     contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
                     labelText: 'Confirmar contraseña',
                     //errorText:
-                        //isPasswordConfValid ? null : 'Contraseña inválida',
+                    //isPasswordConfValid ? null : 'Contraseña inválida',
                     border: OutlineInputBorder()),
                 obscureText: true,
               ),

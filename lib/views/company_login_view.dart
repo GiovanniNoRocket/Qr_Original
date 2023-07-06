@@ -82,7 +82,7 @@ class LoginView extends StatelessWidget {
               onPressed: loginPressed,
               child: const Text('Iniciar sesión'),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.005),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.05),
             Row(
               mainAxisAlignment: MainAxisAlignment
                   .center, // Alineación de los botones y espacio entre ellos

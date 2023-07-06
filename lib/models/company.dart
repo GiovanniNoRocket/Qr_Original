@@ -29,11 +29,15 @@ class Company {
   }
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-    'nit': nit,
-    'domain': domain,
-    'email': email,
-    'phone': phone,
-  };
+        'id': id,
+        'name': name,
+        'nit': nit,
+        'domain': domain,
+        'email': email,
+        'phone': phone,
+      };
+
+  String getCompanyName() {
+    return name;
+  }
 }
